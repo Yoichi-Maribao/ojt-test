@@ -28,22 +28,22 @@ ___
 
 →app/models/user.rb内でattachment以下の記述を :profile_imageに変更（末尾の_idを削除）
 
-[ ] 本の投稿ができない
+[x] 本の投稿ができない
 
-→
+→user.idがnilだったため、app/controllers/books_controller.rbのcreateアクション内にて@new_book.user_id = current_user.idと追記
 
-[ ] ほんの編集画面でエラーが出る
+[x] 本の編集画面でエラーが出る
 
-→
+→app/controllers/books_controller.rbのeditアクション部で全角スペースが混じっていたためうまく読み込まれずエラーが起きていた
 
-[ ] 本の削除ができない
+[x] 本の削除ができない
 
-→
+→books_controllerのdestroyメソッド内でdestroyがdestryとタイポされていた。
 
-[ ] エラーメッセージが出ない
+[x] エラーメッセージが出ない
 
-→
+→createアクション、updateアクション内での処理に失敗した際の分岐がrenderではなくredirectになっていた。
 
-[ ] 本の一覧ページから詳細ページへのリンク先が適切ではない
+[x] 本の一覧ページから詳細ページへのリンク先が適切ではない
 
-→
+→index内の本のタイトルから詳細へ飛ぶ際のパス指定がbook_pathではなくbooks_pathになっていた（showではなくindexへのパス。)
